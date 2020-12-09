@@ -98,12 +98,13 @@ always@(posedge Clk) begin
         $finish;
 
     // put in your own signal to count stall and flush
-    //if(CPU.Hazard_Detection.Stall_o == 1 && CPU.Control.Branch_o == 0)stall = stall + 1;
-    //if(CPU.Flush == 1)flush = flush + 1;  
+    if(CPU.HAZRD_DETECT_UNIT.Stall_o == 1 && CPU.Control.Branch_o == 0)stall = stall + 1;
+    if(CPU.IsJunp.branch_o == 1)flush = flush + 1;  
 
     // print PC
     // DO NOT CHANGE THE OUTPUT FORMAT
     $fdisplay(outfile, "cycle = %d, Start = %0d, Stall = %0d, Flush = %0d\nPC = %d", counter, Start, stall, flush, CPU.PC.pc_o);
+    $fdisplay(outfile, "\nPCWrite = %d, Rs1_i = %d, Rs2_i = %d, EXRd = %d, EX_MEMRead_i = %d\n", CPU.HAZRD_DETECT_UNIT.PCWrite_o, CPU.HAZRD_DETECT_UNIT.Rs1_i, CPU.HAZRD_DETECT_UNIT.Rs2_i, CPU.HAZRD_DETECT_UNIT.EXRd_i, CPU.HAZRD_DETECT_UNIT.EX_MEMRead_i);
     
     // print Registers
     // DO NOT CHANGE THE OUTPUT FORMAT

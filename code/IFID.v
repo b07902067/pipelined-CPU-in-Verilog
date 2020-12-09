@@ -23,7 +23,7 @@ initial begin
 end
 
 always@(posedge clk_i) begin
-    if(Flush_i) begin
+    if(Flush_i == 1'b1) begin
         Inst_o <= 32'b0;
         PC_o <= PC_i;
     end

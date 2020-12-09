@@ -8,6 +8,6 @@ module AND
 input   branch_i, equal_i;
 output  branch_o;
 
-assign branch_o = branch_i & equal_i;
+assign branch_o = (branch_i == 1'b1 && equal_i == 1'b1)? 1'b1 : 1'b0;
 
 endmodule

@@ -1,5 +1,8 @@
 cycle =           0, Start = 1, Stall = 0, Flush = 0
 PC =          0
+
+PCWrite = 1, Rs1_i =  x, Rs2_i =  x, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
@@ -20,7 +23,10 @@ Data Memory: 0x1C =          0
 
 
 cycle =           1, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =          4
+
+PCWrite = x, Rs1_i =  0, Rs2_i = 11, EXRd =  x, EX_MEMRead_i = x
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
@@ -41,7 +47,10 @@ Data Memory: 0x1C =          0
 
 
 cycle =           2, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =          4
+
+PCWrite = 1, Rs1_i =  0, Rs2_i = 11, EXRd =  5, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
@@ -62,7 +71,10 @@ Data Memory: 0x1C =          0
 
 
 cycle =           3, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =          8
+
+PCWrite = 1, Rs1_i =  0, Rs2_i = 10, EXRd =  5, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
@@ -83,7 +95,10 @@ Data Memory: 0x1C =          0
 
 
 cycle =           4, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         12
+
+PCWrite = 1, Rs1_i =  4, Rs2_i =  0, EXRd =  6, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
@@ -104,14 +119,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =           5, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         16
+
+PCWrite = 1, Rs1_i =  0, Rs2_i = 15, EXRd = 30, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -125,14 +143,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =           6, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         20
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  3, EXRd =  7, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -146,14 +167,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =           7, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         24
+
+PCWrite = 1, Rs1_i =  5, Rs2_i =  0, EXRd =  8, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -167,14 +191,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =           8, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         28
+
+PCWrite = 1, Rs1_i =  5, Rs2_i =  6, EXRd =  9, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -188,14 +215,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =           9, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         32
+
+PCWrite = 1, Rs1_i =  5, Rs2_i =  6, EXRd = 28, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -209,14 +239,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          10, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         36
+
+PCWrite = 1, Rs1_i =  6, Rs2_i =  6, EXRd =  8, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -230,14 +263,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          11, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         40
+
+PCWrite = 1, Rs1_i =  9, Rs2_i =  7, EXRd = 29, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -251,14 +287,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          12, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         44
+
+PCWrite = 1, Rs1_i =  5, Rs2_i =  9, EXRd = 30, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -272,14 +311,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          13, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         48
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  5, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -293,14 +335,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          14, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         52
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -314,14 +359,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          15, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         56
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -335,14 +383,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          16, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         60
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -356,14 +407,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          17, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         64
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -377,14 +431,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          18, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         68
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -398,14 +455,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          19, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         72
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -419,14 +479,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          20, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         76
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -440,14 +503,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          21, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         80
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -461,14 +527,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          22, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         84
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -482,14 +551,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          23, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         88
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -503,14 +575,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          24, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         92
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -524,14 +599,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          25, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =         96
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -545,14 +623,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          26, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        100
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -566,14 +647,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          27, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        104
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -587,14 +671,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          28, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        108
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -608,14 +695,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          29, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        112
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -629,14 +719,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          30, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        116
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -650,14 +743,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          31, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        120
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -671,14 +767,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          32, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        124
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -692,14 +791,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          33, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        128
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -713,14 +815,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          34, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        132
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -734,14 +839,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          35, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        136
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -755,14 +863,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          36, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        140
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -776,14 +887,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          37, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        144
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -797,14 +911,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          38, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        148
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -818,14 +935,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          39, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        152
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -839,14 +959,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          40, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        156
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -860,14 +983,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          41, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        160
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -881,14 +1007,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          42, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        164
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -902,14 +1031,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          43, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        168
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -923,14 +1055,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          44, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        172
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -944,14 +1079,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          45, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        176
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -965,14 +1103,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          46, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        180
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -986,14 +1127,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          47, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        184
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1007,14 +1151,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          48, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        188
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1028,14 +1175,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          49, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        192
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1049,14 +1199,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          50, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        196
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1070,14 +1223,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          51, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        200
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1091,14 +1247,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          52, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        204
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1112,14 +1271,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          53, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        208
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1133,14 +1295,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          54, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        212
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1154,14 +1319,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          55, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        216
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1175,14 +1343,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          56, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        220
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1196,14 +1367,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          57, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        224
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1217,14 +1391,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          58, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        228
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1238,14 +1415,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          59, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        232
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1259,14 +1439,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          60, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        236
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1280,14 +1463,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          61, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        240
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1301,14 +1487,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          62, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        244
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
@@ -1322,14 +1511,17 @@ Data Memory: 0x1C =          0
 
 
 cycle =          63, Start = 1, Stall = 0, Flush = 0
-PC =          0
+PC =        248
+
+PCWrite = 1, Rs1_i =  0, Rs2_i =  0, EXRd =  0, EX_MEMRead_i = 0
+
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x5 =          x, x13 =          0, x21 =          0, x29 =          0
 x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
