@@ -43,6 +43,8 @@ initial begin
     // [RegisterInitialization] DO NOT REMOVE THIS FLAG !!!
 
     // TODO: initialize your pipeline registers
+    CPU.PC.pc_o = 32'b0;
+
     CPU.IFID.PC_o = 32'b0;
     CPU.IFID.Inst_o = 32'b0;
 
@@ -105,6 +107,7 @@ always@(posedge Clk) begin
     // DO NOT CHANGE THE OUTPUT FORMAT
     $fdisplay(outfile, "cycle = %d, Start = %0d, Stall = %0d, Flush = %0d\nPC = %d", counter, Start, stall, flush, CPU.PC.pc_o);
     $fdisplay(outfile, "\nPCWrite = %d, Rs1_i = %d, Rs2_i = %d, EXRd = %d, EX_MEMRead_i = %d\n", CPU.HAZRD_DETECT_UNIT.PCWrite_o, CPU.HAZRD_DETECT_UNIT.Rs1_i, CPU.HAZRD_DETECT_UNIT.Rs2_i, CPU.HAZRD_DETECT_UNIT.EXRd_i, CPU.HAZRD_DETECT_UNIT.EX_MEMRead_i);
+    $fdisplay(outfile, "\nIFID_inst_i = %d, IFID_inst_o = %d, IDEX_Rd_i = %d, IDEX_Rd_o = %d\n", CPU.IFID.Inst_o, CPU.IFID.Inst_o, CPU.IDEX.Rd_i, CPU.IDEX.Rd_o);
     
     // print Registers
     // DO NOT CHANGE THE OUTPUT FORMAT

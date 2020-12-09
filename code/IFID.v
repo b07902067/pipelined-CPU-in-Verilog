@@ -18,8 +18,8 @@ output  [31:0]  PC_o, Inst_o;
 reg     [31:0]  PC_o, Inst_o;
 
 initial begin
-    PC_o = 0;
-    Inst_o = 0;
+    PC_o = 32'b0;
+    Inst_o = 32'b0;
 end
 
 always@(posedge clk_i) begin
