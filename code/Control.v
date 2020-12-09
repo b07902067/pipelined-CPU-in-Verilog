@@ -29,7 +29,7 @@ output reg Branch_o;
 
 always@(op_i, NoOp_i)begin
 
-	if (NoOp_i == 1'b0) begin
+	if (NoOp_i == 1'b1) begin
 		MemtoReg_o = 1'b0;
 		RegWrite_o = 1'b0;
 		ALUSrc_o = 1'b0;

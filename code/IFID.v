@@ -28,8 +28,14 @@ always@(posedge clk_i) begin
         PC_o <= PC_i;
     end
     else if(Stall_i  == 1'b0) begin
-        Inst_o <= Inst_i;
-        PC_o <= PC_i;
+        if(Inst_i) begin
+            Inst_o <= Inst_i;
+            PC_o <= PC_i;
+        end
+        else begin
+            Inst_o <= 32'b0;
+            PC_o <= 32'b0;
+        end
     end
 end
 

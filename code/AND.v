@@ -8,6 +8,20 @@ module AND
 input   branch_i, equal_i;
 output  branch_o;
 
-assign branch_o = (branch_i == 1'b1 && equal_i == 1'b1)? 1'b1 : 1'b0;
+reg     branch_o;
+
+
+initial begin
+    branch_o = 1'b0;
+end
+
+always@(branch_i, equal_i) begin
+    if (branch_i && equal_i) begin
+        branch_o = 1'b1;
+    end
+    else begin
+        branch_o = 1'b0;
+    end
+end
 
 endmodule

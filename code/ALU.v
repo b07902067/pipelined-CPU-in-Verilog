@@ -39,7 +39,7 @@ always@(data1_i, data2_i, ALUCtrl_i)begin
 		4'b1001 :data_o = data1_i - data2_i;
 
 	endcase
-	if(data_o == 32'b00000000000000000000000000000000)begin
+	if(data1_i == data2_i)begin
 		Zero_o = 1'b1;
 	end
 	else begin
