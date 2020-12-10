@@ -81,7 +81,7 @@ initial begin
 
     // Load instructions into instruction memory
     // Make sure you change back to "instruction.txt" before submission
-    $readmemb("../testdata/instruction_4.txt", CPU.Instruction_Memory.memory);
+    $readmemb("instruction.txt", CPU.Instruction_Memory.memory);
     
     // Open output file
     // Make sure you change back to "output.txt" before submission
