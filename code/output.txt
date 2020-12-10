@@ -2,7 +2,7 @@ IFID_Inst_o = 00000000000000000000000000000000
 
 IFID_Inst_o = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-1000000000001100010011, Instruction_ID = 00000000000000000000000000000000
+1100000000001100010011, Instruction_ID = 00000000000000000000000000000000
 
 IFID_Inst_o = 00000000000000000000000000000000
 
@@ -14,7 +14,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -43,9 +43,9 @@ Data Memory: 0x1C =          0
 
 cycle =           1, Start = 1, Stall = 0, Flush = 0
 PC =          4
-Instruction_IF = 00000000011000110000001100110011, Instruction_ID = 00000000101000000000001100010011
+Instruction_IF = 00000000011000000010001000100011, Instruction_ID = 00000000111100000000001100010011
 
-IFID_Inst_o = 00000000101000000000001100010011
+IFID_Inst_o = 00000000111100000000001100010011
 
 Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 11, Control.ALUSrc_o = 1, Control.Branch_o = 0
 
@@ -55,11 +55,11 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 01111, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
-PC+4 = 00000000000000000000000000001000, PC+IMM = 00000000000000000000000000010100
+PC+4 = 00000000000000000000000000001000, PC+IMM = 00000000000000000000000000011110
 
 branch_i = 0, equal_i = 0, branch_o = 0
 
@@ -84,23 +84,23 @@ Data Memory: 0x1C =          0
 
 cycle =           2, Start = 1, Stall = 0, Flush = 0
 PC =          8
-Instruction_IF = 00000000011000110000001100110011, Instruction_ID = 00000000011000110000001100110011
+Instruction_IF = 00000000000000101010111100000011, Instruction_ID = 00000000011000000010001000100011
 
-IFID_Inst_o = 00000000011000110000001100110011
+IFID_Inst_o = 00000000011000000010001000100011
 
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 1, Control.ALUOp_o = 00, Control.ALUSrc_o = 1, Control.Branch_o = 0
 
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 11, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000001010, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 01010, IDEX.Rd_o = 00110
+IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 11, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000001111, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 01111, IDEX.Rd_o = 00110
 
 EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00110, EXRd_i = 00110, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
-PC+4 = 00000000000000000000000000001100, PC+IMM = 00000000000000000000000000010000
+PC+4 = 00000000000000000000000000001100, PC+IMM = 00000000000000000000000000001100
 
 branch_i = 0, equal_i = 0, branch_o = 0
 
@@ -125,269 +125,23 @@ Data Memory: 0x1C =          0
 
 cycle =           3, Start = 1, Stall = 0, Flush = 0
 PC =         12
-Instruction_IF = 00000000011000110000001100110011, Instruction_ID = 00000000011000110000001100110011
-
-IFID_Inst_o = 00000000011000110000001100110011
-
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000110, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 00110, IDEX.Rd_o = 00110
-
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00110, EXMEM.ALUResult_o = 00000000000000000000000000001010, EXMEM.DATAWr_o = 00000000000000000000000000000000
-
-MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 10, ForwardB = 10
-
-PC+4 = 00000000000000000000000000010000, PC+IMM = 00000000000000000000000000010100
-
-branch_i = 0, equal_i = 0, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =          0, x14 =          0, x22 =          0, x30 =          0
-x7 =          0, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =          5
-Data Memory: 0x04 =          0
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =          0
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =           4, Start = 1, Stall = 0, Flush = 0
-PC =         16
-Instruction_IF = 00000000011000110000001100110011, Instruction_ID = 00000000011000110000001100110011
-
-IFID_Inst_o = 00000000011000110000001100110011
-
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000110, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 00110, IDEX.Rd_o = 00110
-
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00110, EXMEM.ALUResult_o = 00000000000000000000000000010100, EXMEM.DATAWr_o = 00000000000000000000000000001010
-
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000001010, MEMWB.Rd_o = 00110, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 10, ForwardB = 10
-
-PC+4 = 00000000000000000000000000010100, PC+IMM = 00000000000000000000000000011000
-
-branch_i = 0, equal_i = 1, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =          0, x14 =          0, x22 =          0, x30 =          0
-x7 =          0, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =          5
-Data Memory: 0x04 =          0
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =          0
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =           5, Start = 1, Stall = 0, Flush = 0
-PC =         20
-Instruction_IF = 11111111000000110000001110010011, Instruction_ID = 00000000011000110000001100110011
-
-IFID_Inst_o = 00000000011000110000001100110011
-
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000001010, IDEX.Reg2_o = 00000000000000000000000000001010, IDEX.Imm_o = 00000000000000000000000000000110, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 00110, IDEX.Rd_o = 00110
-
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00110, EXMEM.ALUResult_o = 00000000000000000000000000101000, EXMEM.DATAWr_o = 00000000000000000000000000010100
-
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000010100, MEMWB.Rd_o = 00110, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 10, ForwardB = 10
-
-PC+4 = 00000000000000000000000000011000, PC+IMM = 00000000000000000000000000011100
-
-branch_i = 0, equal_i = 1, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =         10, x14 =          0, x22 =          0, x30 =          0
-x7 =          0, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =          5
-Data Memory: 0x04 =          0
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =          0
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =           6, Start = 1, Stall = 0, Flush = 0
-PC =         24
-Instruction_IF = 00000011110011100000111000110011, Instruction_ID = 11111111000000110000001110010011
-
-IFID_Inst_o = 11111111000000110000001110010011
-
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 11, Control.ALUSrc_o = 1, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000010100, IDEX.Reg2_o = 00000000000000000000000000010100, IDEX.Imm_o = 00000000000000000000000000000110, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 00110, IDEX.Rd_o = 00110
-
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00110, EXMEM.ALUResult_o = 00000000000000000000000001010000, EXMEM.DATAWr_o = 00000000000000000000000000101000
-
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000101000, MEMWB.Rd_o = 00110, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 10, ForwardB = 10
-
-PC+4 = 00000000000000000000000000011100, PC+IMM = 11111111111111111111111111110100
-
-branch_i = 0, equal_i = 0, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =         20, x14 =          0, x22 =          0, x30 =          0
-x7 =          0, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =          5
-Data Memory: 0x04 =          0
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =          0
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =           7, Start = 1, Stall = 0, Flush = 0
-PC =         28
-Instruction_IF = 00000000011000000010001000100011, Instruction_ID = 00000011110011100000111000110011
-
-IFID_Inst_o = 00000011110011100000111000110011
-
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 11, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000101000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 11111111111111111111111111110000, IDEX.funct_o = 1111111000, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 10000, IDEX.Rd_o = 00111
-
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00110, EXMEM.ALUResult_o = 00000000000000000000000010100000, EXMEM.DATAWr_o = 00000000000000000000000001010000
-
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000001010000, MEMWB.Rd_o = 00110, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 10, ForwardB = 00
-
-PC+4 = 00000000000000000000000000100000, PC+IMM = 00000000000000000000000010010000
-
-branch_i = 0, equal_i = 0, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =         40, x14 =          0, x22 =          0, x30 =          0
-x7 =          0, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =          5
-Data Memory: 0x04 =          0
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =          0
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =           8, Start = 1, Stall = 0, Flush = 0
-PC =         32
-Instruction_IF = 00000000000000101010111100000011, Instruction_ID = 00000000011000000010001000100011
-
-IFID_Inst_o = 00000000011000000010001000100011
-
-Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 1, Control.ALUOp_o = 00, Control.ALUSrc_o = 1, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000111100, IDEX.funct_o = 0000001000, IDEX.Rs1_o = 11100, IDEX.Rs2_o = 11100, IDEX.Rd_o = 11100
-
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00111, EXMEM.ALUResult_o = 00000000000000000000000010010000, EXMEM.DATAWr_o = 00000000000000000000000000000000
-
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000010100000, MEMWB.Rd_o = 00110, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 00, ForwardB = 00
-
-PC+4 = 00000000000000000000000000100100, PC+IMM = 00000000000000000000000000100100
-
-branch_i = 0, equal_i = 0, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =         80, x14 =          0, x22 =          0, x30 =          0
-x7 =          0, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =          5
-Data Memory: 0x04 =          0
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =          0
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =           9, Start = 1, Stall = 0, Flush = 0
-PC =         36
-Instruction_IF = 00000000001000000000111000010011, Instruction_ID = 00000000000000101010111100000011
+Instruction_IF = 00000011111000110000001010110011, Instruction_ID = 00000000000000101010111100000011
 
 IFID_Inst_o = 00000000000000101010111100000011
 
 Control.RegWrite_o = 1, Control.MemtoReg_o = 1, Control.MemRead_o = 1, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 1, Control.Branch_o = 0
 
-IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 1, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000010100000, IDEX.Imm_o = 00000000000000000000000000000100, IDEX.funct_o = 0000000010, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00110, IDEX.Rd_o = 00100
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 1, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000100, IDEX.funct_o = 0000000010, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00110, IDEX.Rd_o = 00100
 
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11100, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
+EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00110, EXMEM.ALUResult_o = 00000000000000000000000000001111, EXMEM.DATAWr_o = 00000000000000000000000000000000
 
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000010010000, MEMWB.Rd_o = 00111, MEMWB.DATARd_o = 00000000000000000000000000000000
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00101, Rs2_i = 00000, EXRd_i = 00100, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
-ForwardA = 00, ForwardB = 00
+ForwardA = 00, ForwardB = 10
 
-PC+4 = 00000000000000000000000000101000, PC+IMM = 00000000000000000000000000100000
+PC+4 = 00000000000000000000000000010000, PC+IMM = 00000000000000000000000000001000
 
 branch_i = 0, equal_i = 0, branch_o = 0
 
@@ -398,7 +152,7 @@ x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
 x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          0
+x6 =          0, x14 =          0, x22 =          0, x30 =          0
 x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
 Data Memory: 0x04 =          0
@@ -410,25 +164,25 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          10, Start = 1, Stall = 0, Flush = 0
-PC =         40
-Instruction_IF = 00000011110011100000111000110011, Instruction_ID = 00000000001000000000111000010011
+cycle =           4, Start = 1, Stall = 1, Flush = 0
+PC =         16
+Instruction_IF = 00000000000000101100001110110011, Instruction_ID = 00000011111000110000001010110011
 
-IFID_Inst_o = 00000000001000000000111000010011
+IFID_Inst_o = 00000011111000110000001010110011
 
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 11, Control.ALUSrc_o = 1, Control.Branch_o = 0
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
 
 IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 1, IDEX.MemRead_o = 1, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000010, IDEX.Rs1_o = 00101, IDEX.Rs2_o = 00000, IDEX.Rd_o = 11110
 
-EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 1, EXMEM.Rd_o = 00100, EXMEM.ALUResult_o = 00000000000000000000000000000100, EXMEM.DATAWr_o = 00000000000000000000000010100000
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 1, EXMEM.Rd_o = 00100, EXMEM.ALUResult_o = 00000000000000000000000000000100, EXMEM.DATAWr_o = 00000000000000000000000000001111
 
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 11100, MEMWB.DATARd_o = 00000000000000000000000000000000
+MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000001111, MEMWB.Rd_o = 00110, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00110, Rs2_i = 11110, EXRd_i = 11110, ID_EXRead_i = 1, NoOp = 1, PC_write = 0, Stall = 1
 
 ForwardA = 00, ForwardB = 00
 
-PC+4 = 00000000000000000000000000101100, PC+IMM = 00000000000000000000000000101000
+PC+4 = 00000000000000000000000000010100, PC+IMM = 00000000000000000000000010001000
 
 branch_i = 0, equal_i = 0, branch_o = 0
 
@@ -439,8 +193,8 @@ x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
 x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          0
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
+x6 =          0, x14 =          0, x22 =          0, x30 =          0
+x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
 Data Memory: 0x04 =          0
 Data Memory: 0x08 =          0
@@ -451,25 +205,25 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          11, Start = 1, Stall = 1, Flush = 0
-PC =         44
-Instruction_IF = 00000011110011100000111000110011, Instruction_ID = 00000011110011100000111000110011
+cycle =           5, Start = 1, Stall = 1, Flush = 0
+PC =         16
+Instruction_IF = 00000000000000101100001110110011, Instruction_ID = 00000011111000110000001010110011
 
-IFID_Inst_o = 00000011110011100000111000110011
+IFID_Inst_o = 00000011111000110000001010110011
 
-Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
+Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
 
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 11, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000010, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00010, IDEX.Rd_o = 11100
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000001111, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000111110, IDEX.funct_o = 0000001000, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 11110, IDEX.Rd_o = 00101
 
 EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 1, EXMEM.MemRead_o = 1, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11110, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000100, MEMWB.Rd_o = 00100, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 1, PC_write = 0
+Rs1_i = 00110, Rs2_i = 11110, EXRd_i = 00101, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
-ForwardA = 00, ForwardB = 00
+ForwardA = 00, ForwardB = 10
 
-PC+4 = 00000000000000000000000000110000, PC+IMM = 00000000000000000000000010100000
+PC+4 = 00000000000000000000000000010100, PC+IMM = 00000000000000000000000010001000
 
 branch_i = 0, equal_i = 0, branch_o = 0
 
@@ -480,10 +234,10 @@ x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
 x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          0
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
+x6 =         15, x14 =          0, x22 =          0, x30 =          0
+x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
-Data Memory: 0x04 =        160
+Data Memory: 0x04 =         15
 Data Memory: 0x08 =          0
 Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
@@ -492,25 +246,25 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          12, Start = 1, Stall = 1, Flush = 0
-PC =         44
-Instruction_IF = 00000011110011100000111000110011, Instruction_ID = 00000011110011100000111000110011
+cycle =           6, Start = 1, Stall = 1, Flush = 0
+PC =         20
+Instruction_IF = 00000000011100000010010000100011, Instruction_ID = 00000000000000101100001110110011
 
-IFID_Inst_o = 00000011110011100000111000110011
+IFID_Inst_o = 00000000000000101100001110110011
 
 Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
 
-IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000111100, IDEX.funct_o = 0000001000, IDEX.Rs1_o = 11100, IDEX.Rs2_o = 11100, IDEX.Rd_o = 11100
+IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000001111, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000111110, IDEX.funct_o = 0000001000, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 11110, IDEX.Rd_o = 00101
 
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11100, EXMEM.ALUResult_o = 00000000000000000000000000000010, EXMEM.DATAWr_o = 00000000000000000000000000000000
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00101, EXMEM.ALUResult_o = 00000000000000000000000000001111, EXMEM.DATAWr_o = 00000000000000000000000000000000
 
 MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 1, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 11110, MEMWB.DATARd_o = 00000000000000000000000000000101
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00101, Rs2_i = 00000, EXRd_i = 00101, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
-ForwardA = 10, ForwardB = 10
+ForwardA = 00, ForwardB = 01
 
-PC+4 = 00000000000000000000000000110000, PC+IMM = 00000000000000000000000010100000
+PC+4 = 00000000000000000000000000011000, PC+IMM = 00000000000000000000000000010000
 
 branch_i = 0, equal_i = 0, branch_o = 0
 
@@ -521,10 +275,10 @@ x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
 x4 =          0, x12 =          0, x20 =          0, x28 =          0
 x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          0
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
+x6 =         15, x14 =          0, x22 =          0, x30 =          0
+x7 =          0, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
-Data Memory: 0x04 =        160
+Data Memory: 0x04 =         15
 Data Memory: 0x08 =          0
 Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
@@ -533,40 +287,450 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          13, Start = 1, Stall = 1, Flush = 0
-PC =         48
-Instruction_IF = 00000011110011100000111000110011, Instruction_ID = 00000011110011100000111000110011
+cycle =           7, Start = 1, Stall = 1, Flush = 0
+PC =         24
+Instruction_IF = 00000000011000110000001100110011, Instruction_ID = 00000000011100000010010000100011
 
-IFID_Inst_o = 00000011110011100000111000110011
+IFID_Inst_o = 00000000011100000010010000100011
+
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 1, Control.ALUOp_o = 00, Control.ALUSrc_o = 1, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000100, IDEX.Rs1_o = 00101, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00111
+
+EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00101, EXMEM.ALUResult_o = 00000000000000000000000001001011, EXMEM.DATAWr_o = 00000000000000000000000000000101
+
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000001111, MEMWB.Rd_o = 00101, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00000, Rs2_i = 00111, EXRd_i = 00111, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
+
+ForwardA = 10, ForwardB = 00
+
+PC+4 = 00000000000000000000000000011100, PC+IMM = 00000000000000000000000000100100
+
+branch_i = 0, equal_i = 0, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          0
+x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x6 =         15, x14 =          0, x22 =          0, x30 =          5
+x7 =          0, x15 =          0, x23 =          0, x31 =          0
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =          0
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =           8, Start = 1, Stall = 1, Flush = 0
+PC =         28
+Instruction_IF = 00000000011000110000001100110011, Instruction_ID = 00000000011000110000001100110011
+
+IFID_Inst_o = 00000000011000110000001100110011
 
 Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
 
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000111100, IDEX.funct_o = 0000001000, IDEX.Rs1_o = 11100, IDEX.Rs2_o = 11100, IDEX.Rd_o = 11100
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 1, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000001000, IDEX.funct_o = 0000000010, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00111, IDEX.Rd_o = 01000
 
-EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11100, EXMEM.ALUResult_o = 00000000000000000000000000000100, EXMEM.DATAWr_o = 00000000000000000000000000000010
+EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00111, EXMEM.ALUResult_o = 00000000000000000000000001001011, EXMEM.DATAWr_o = 00000000000000000000000000000000
+
+MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000001001011, MEMWB.Rd_o = 00101, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00110, Rs2_i = 00110, EXRd_i = 01000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
+
+ForwardA = 00, ForwardB = 10
+
+PC+4 = 00000000000000000000000000100000, PC+IMM = 00000000000000000000000000100100
+
+branch_i = 0, equal_i = 1, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          0
+x5 =          0, x13 =          0, x21 =          0, x29 =          0
+x6 =         15, x14 =          0, x22 =          0, x30 =          5
+x7 =          0, x15 =          0, x23 =          0, x31 =          0
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =          0
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =           9, Start = 1, Stall = 1, Flush = 0
+PC =         32
+Instruction_IF = 00000000100000000010111010000011, Instruction_ID = 00000000011000110000001100110011
+
+IFID_Inst_o = 00000000011000110000001100110011
+
+Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000001111, IDEX.Reg2_o = 00000000000000000000000000001111, IDEX.Imm_o = 00000000000000000000000000000110, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 00110, IDEX.Rd_o = 00110
+
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 1, EXMEM.Rd_o = 01000, EXMEM.ALUResult_o = 00000000000000000000000000001000, EXMEM.DATAWr_o = 00000000000000000000000001001011
+
+MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000001001011, MEMWB.Rd_o = 00111, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00110, Rs2_i = 00110, EXRd_i = 00110, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
+
+ForwardA = 00, ForwardB = 00
+
+PC+4 = 00000000000000000000000000100100, PC+IMM = 00000000000000000000000000101000
+
+branch_i = 0, equal_i = 1, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          0
+x5 =         75, x13 =          0, x21 =          0, x29 =          0
+x6 =         15, x14 =          0, x22 =          0, x30 =          5
+x7 =          0, x15 =          0, x23 =          0, x31 =          0
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =          0
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =          10, Start = 1, Stall = 1, Flush = 0
+PC =         36
+Instruction_IF = 00000001110100110111111000110011, Instruction_ID = 00000000100000000010111010000011
+
+IFID_Inst_o = 00000000100000000010111010000011
+
+Control.RegWrite_o = 1, Control.MemtoReg_o = 1, Control.MemRead_o = 1, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 1, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000001111, IDEX.Reg2_o = 00000000000000000000000000001111, IDEX.Imm_o = 00000000000000000000000000000110, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 00110, IDEX.Rd_o = 00110
+
+EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00110, EXMEM.ALUResult_o = 00000000000000000000000000011110, EXMEM.DATAWr_o = 00000000000000000000000000001111
+
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000001000, MEMWB.Rd_o = 01000, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00000, Rs2_i = 01000, EXRd_i = 00110, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
+
+ForwardA = 10, ForwardB = 10
+
+PC+4 = 00000000000000000000000000101000, PC+IMM = 00000000000000000000000000110000
+
+branch_i = 0, equal_i = 0, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          0
+x5 =         75, x13 =          0, x21 =          0, x29 =          0
+x6 =         15, x14 =          0, x22 =          0, x30 =          5
+x7 =         75, x15 =          0, x23 =          0, x31 =          0
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =          11, Start = 1, Stall = 2, Flush = 0
+PC =         40
+Instruction_IF = 11111111000000110000001110010011, Instruction_ID = 00000001110100110111111000110011
+
+IFID_Inst_o = 00000001110100110111111000110011
+
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 1, IDEX.MemRead_o = 1, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000001000, IDEX.funct_o = 0000000010, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 01000, IDEX.Rd_o = 11101
+
+EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00110, EXMEM.ALUResult_o = 00000000000000000000000000111100, EXMEM.DATAWr_o = 00000000000000000000000000011110
+
+MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000011110, MEMWB.Rd_o = 00110, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00110, Rs2_i = 11101, EXRd_i = 11101, ID_EXRead_i = 1, NoOp = 1, PC_write = 0, Stall = 1
+
+ForwardA = 00, ForwardB = 00
+
+PC+4 = 00000000000000000000000000101100, PC+IMM = 00000000000000000000000001011110
+
+branch_i = 0, equal_i = 0, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          0
+x5 =         75, x13 =          0, x21 =          0, x29 =          0
+x6 =         15, x14 =          0, x22 =          0, x30 =          5
+x7 =         75, x15 =          0, x23 =          0, x31 =          0
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =          12, Start = 1, Stall = 2, Flush = 0
+PC =         40
+Instruction_IF = 11111111000000110000001110010011, Instruction_ID = 00000001110100110111111000110011
+
+IFID_Inst_o = 00000001110100110111111000110011
+
+Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000011110, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000011101, IDEX.funct_o = 0000000111, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 11101, IDEX.Rd_o = 11100
+
+EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 1, EXMEM.MemRead_o = 1, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11101, EXMEM.ALUResult_o = 00000000000000000000000000001000, EXMEM.DATAWr_o = 00000000000000000000000000000000
+
+MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000111100, MEMWB.Rd_o = 00110, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00110, Rs2_i = 11101, EXRd_i = 11100, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
+
+ForwardA = 01, ForwardB = 10
+
+PC+4 = 00000000000000000000000000101100, PC+IMM = 00000000000000000000000001011110
+
+branch_i = 0, equal_i = 0, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          0
+x5 =         75, x13 =          0, x21 =          0, x29 =          0
+x6 =         30, x14 =          0, x22 =          0, x30 =          5
+x7 =         75, x15 =          0, x23 =          0, x31 =          0
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =          13, Start = 1, Stall = 2, Flush = 0
+PC =         44
+Instruction_IF = 00000000001000000000111000010011, Instruction_ID = 11111111000000110000001110010011
+
+IFID_Inst_o = 11111111000000110000001110010011
+
+Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 11, Control.ALUSrc_o = 1, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000111100, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000011101, IDEX.funct_o = 0000000111, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 11101, IDEX.Rd_o = 11100
+
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11100, EXMEM.ALUResult_o = 00000000000000000000000001000100, EXMEM.DATAWr_o = 00000000000000000000000000001000
+
+MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 1, MEMWB.ALUResult_o = 00000000000000000000000000001000, MEMWB.Rd_o = 11101, MEMWB.DATARd_o = 00000000000000000000000001001011
+
+Rs1_i = 00110, Rs2_i = 10000, EXRd_i = 11100, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
+
+ForwardA = 00, ForwardB = 01
+
+PC+4 = 00000000000000000000000000110000, PC+IMM = 00000000000000000000000000001000
+
+branch_i = 0, equal_i = 0, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          0
+x5 =         75, x13 =          0, x21 =          0, x29 =          0
+x6 =         60, x14 =          0, x22 =          0, x30 =          5
+x7 =         75, x15 =          0, x23 =          0, x31 =          0
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =          14, Start = 1, Stall = 2, Flush = 0
+PC =         48
+Instruction_IF = 00000000110000000010111100000011, Instruction_ID = 00000000001000000000111000010011
+
+IFID_Inst_o = 00000000001000000000111000010011
+
+Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 11, Control.ALUSrc_o = 1, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 11, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000111100, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 11111111111111111111111111110000, IDEX.funct_o = 1111111000, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 10000, IDEX.Rd_o = 00111
+
+EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11100, EXMEM.ALUResult_o = 00000000000000000000000000001000, EXMEM.DATAWr_o = 00000000000000000000000001001011
+
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000001000100, MEMWB.Rd_o = 11100, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00000, Rs2_i = 00010, EXRd_i = 00111, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
+
+ForwardA = 00, ForwardB = 00
+
+PC+4 = 00000000000000000000000000110100, PC+IMM = 00000000000000000000000000110000
+
+branch_i = 0, equal_i = 0, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          0
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          5
+x7 =         75, x15 =          0, x23 =          0, x31 =          0
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =          15, Start = 1, Stall = 2, Flush = 0
+PC =         52
+Instruction_IF = 00000001111000101100001110110011, Instruction_ID = 00000000110000000010111100000011
+
+IFID_Inst_o = 00000000110000000010111100000011
+
+Control.RegWrite_o = 1, Control.MemtoReg_o = 1, Control.MemRead_o = 1, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 1, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 11, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000010, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00010, IDEX.Rd_o = 11100
+
+EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00111, EXMEM.ALUResult_o = 00000000000000000000000000101100, EXMEM.DATAWr_o = 00000000000000000000000000000000
+
+MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000001000, MEMWB.Rd_o = 11100, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00000, Rs2_i = 01100, EXRd_i = 11100, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
+
+ForwardA = 00, ForwardB = 00
+
+PC+4 = 00000000000000000000000000111000, PC+IMM = 00000000000000000000000001001000
+
+branch_i = 0, equal_i = 0, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          0
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          5
+x7 =         75, x15 =          0, x23 =          0, x31 =          0
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =          16, Start = 1, Stall = 3, Flush = 0
+PC =         56
+Instruction_IF = 00000000011100101000111110110011, Instruction_ID = 00000001111000101100001110110011
+
+IFID_Inst_o = 00000001111000101100001110110011
+
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 1, IDEX.MemRead_o = 1, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000001100, IDEX.funct_o = 0000000010, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 01100, IDEX.Rd_o = 11110
+
+EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11100, EXMEM.ALUResult_o = 00000000000000000000000000000010, EXMEM.DATAWr_o = 00000000000000000000000000000000
+
+MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000101100, MEMWB.Rd_o = 00111, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00101, Rs2_i = 11110, EXRd_i = 11110, ID_EXRead_i = 1, NoOp = 1, PC_write = 0, Stall = 1
+
+ForwardA = 00, ForwardB = 00
+
+PC+4 = 00000000000000000000000000111100, PC+IMM = 00000000000000000000000001110000
+
+branch_i = 0, equal_i = 0, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          8
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          5
+x7 =         75, x15 =          0, x23 =          0, x31 =          0
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =          17, Start = 1, Stall = 3, Flush = 0
+PC =         56
+Instruction_IF = 00000000011100101000111110110011, Instruction_ID = 00000001111000101100001110110011
+
+IFID_Inst_o = 00000001111000101100001110110011
+
+Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000001001011, IDEX.Reg2_o = 00000000000000000000000000000101, IDEX.Imm_o = 00000000000000000000000000011110, IDEX.funct_o = 0000000100, IDEX.Rs1_o = 00101, IDEX.Rs2_o = 11110, IDEX.Rd_o = 00111
+
+EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 1, EXMEM.MemRead_o = 1, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11110, EXMEM.ALUResult_o = 00000000000000000000000000001100, EXMEM.DATAWr_o = 00000000000000000000000000000000
 
 MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000010, MEMWB.Rd_o = 11100, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00101, Rs2_i = 11110, EXRd_i = 00111, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
-ForwardA = 01, ForwardB = 01
+ForwardA = 00, ForwardB = 10
 
-PC+4 = 00000000000000000000000000110100, PC+IMM = 00000000000000000000000010100100
+PC+4 = 00000000000000000000000000111100, PC+IMM = 00000000000000000000000001110000
 
-branch_i = 0, equal_i = 1, branch_o = 0
+branch_i = 0, equal_i = 0, branch_o = 0
 
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          5
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          8
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          5
+x7 =         44, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
 Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
@@ -574,122 +738,40 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          14, Start = 1, Stall = 1, Flush = 0
-PC =         52
-Instruction_IF = 00000011110011100000111000110011, Instruction_ID = 00000011110011100000111000110011
-
-IFID_Inst_o = 00000011110011100000111000110011
-
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000010, IDEX.Reg2_o = 00000000000000000000000000000010, IDEX.Imm_o = 00000000000000000000000000111100, IDEX.funct_o = 0000001000, IDEX.Rs1_o = 11100, IDEX.Rs2_o = 11100, IDEX.Rd_o = 11100
-
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11100, EXMEM.ALUResult_o = 00000000000000000000000000000100, EXMEM.DATAWr_o = 00000000000000000000000000000010
-
-MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000100, MEMWB.Rd_o = 11100, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 10, ForwardB = 10
-
-PC+4 = 00000000000000000000000000111000, PC+IMM = 00000000000000000000000010101000
-
-branch_i = 0, equal_i = 1, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          2
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          5
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =          5
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =          0
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =          15, Start = 1, Stall = 1, Flush = 0
-PC =         56
-Instruction_IF = 00000011110011100000111000110011, Instruction_ID = 00000011110011100000111000110011
-
-IFID_Inst_o = 00000011110011100000111000110011
-
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000010, IDEX.Reg2_o = 00000000000000000000000000000010, IDEX.Imm_o = 00000000000000000000000000111100, IDEX.funct_o = 0000001000, IDEX.Rs1_o = 11100, IDEX.Rs2_o = 11100, IDEX.Rd_o = 11100
-
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11100, EXMEM.ALUResult_o = 00000000000000000000000000010000, EXMEM.DATAWr_o = 00000000000000000000000000000100
-
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000100, MEMWB.Rd_o = 11100, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 10, ForwardB = 10
-
-PC+4 = 00000000000000000000000000111100, PC+IMM = 00000000000000000000000010101100
-
-branch_i = 0, equal_i = 1, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          2
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          5
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =          5
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =          0
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =          16, Start = 1, Stall = 1, Flush = 0
+cycle =          18, Start = 1, Stall = 3, Flush = 0
 PC =         60
-Instruction_IF = 00000000011100000010000000100011, Instruction_ID = 00000011110011100000111000110011
+Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000011100101000111110110011
 
-IFID_Inst_o = 00000011110011100000111000110011
+IFID_Inst_o = 00000000011100101000111110110011
 
 Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
 
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000100, IDEX.Reg2_o = 00000000000000000000000000000100, IDEX.Imm_o = 00000000000000000000000000111100, IDEX.funct_o = 0000001000, IDEX.Rs1_o = 11100, IDEX.Rs2_o = 11100, IDEX.Rd_o = 11100
+IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000001001011, IDEX.Reg2_o = 00000000000000000000000000000101, IDEX.Imm_o = 00000000000000000000000000011110, IDEX.funct_o = 0000000100, IDEX.Rs1_o = 00101, IDEX.Rs2_o = 11110, IDEX.Rd_o = 00111
 
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11100, EXMEM.ALUResult_o = 00000000000000000000000100000000, EXMEM.DATAWr_o = 00000000000000000000000000010000
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00111, EXMEM.ALUResult_o = 00000000000000000000000001010111, EXMEM.DATAWr_o = 00000000000000000000000000001100
 
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000010000, MEMWB.Rd_o = 11100, MEMWB.DATARd_o = 00000000000000000000000000000000
+MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 1, MEMWB.ALUResult_o = 00000000000000000000000000001100, MEMWB.Rd_o = 11110, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00101, Rs2_i = 00111, EXRd_i = 00111, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
-ForwardA = 10, ForwardB = 10
+ForwardA = 00, ForwardB = 01
 
-PC+4 = 00000000000000000000000001000000, PC+IMM = 00000000000000000000000010110000
+PC+4 = 00000000000000000000000001000000, PC+IMM = 00000000000000000000000001000110
 
-branch_i = 0, equal_i = 1, branch_o = 0
+branch_i = 0, equal_i = 0, branch_o = 0
 
 Registers
 x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          4
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          5
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          5
+x7 =         44, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
 Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
@@ -697,25 +779,25 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          17, Start = 1, Stall = 1, Flush = 0
+cycle =          19, Start = 1, Stall = 3, Flush = 0
 PC =         64
-Instruction_IF = 11111111111111110000111100010011, Instruction_ID = 00000000011100000010000000100011
+Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
-IFID_Inst_o = 00000000011100000010000000100011
+IFID_Inst_o = 00000000000000000000000000000000
 
-Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 1, Control.ALUOp_o = 00, Control.ALUSrc_o = 1, Control.Branch_o = 0
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
 
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000010000, IDEX.Reg2_o = 00000000000000000000000000010000, IDEX.Imm_o = 00000000000000000000000000111100, IDEX.funct_o = 0000001000, IDEX.Rs1_o = 11100, IDEX.Rs2_o = 11100, IDEX.Rd_o = 11100
+IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000001001011, IDEX.Reg2_o = 00000000000000000000000000101100, IDEX.Imm_o = 00000000000000000000000000000111, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00101, IDEX.Rs2_o = 00111, IDEX.Rd_o = 11111
 
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11100, EXMEM.ALUResult_o = 00000000000000010000000000000000, EXMEM.DATAWr_o = 00000000000000000000000100000000
+EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00111, EXMEM.ALUResult_o = 00000000000000000000000001001011, EXMEM.DATAWr_o = 00000000000000000000000000000000
 
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000100000000, MEMWB.Rd_o = 11100, MEMWB.DATARd_o = 00000000000000000000000000000000
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000001010111, MEMWB.Rd_o = 00111, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 11111, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
-ForwardA = 10, ForwardB = 10
+ForwardA = 00, ForwardB = 10
 
-PC+4 = 00000000000000000000000001000100, PC+IMM = 00000000000000000000000000111100
+PC+4 = 00000000000000000000000001000100, PC+IMM = 00000000000000000000000000000000
 
 branch_i = 0, equal_i = 0, branch_o = 0
 
@@ -724,13 +806,13 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =         16
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          5
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         44, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
 Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
@@ -738,25 +820,25 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          18, Start = 1, Stall = 1, Flush = 0
+cycle =          20, Start = 1, Stall = 3, Flush = 0
 PC =         68
-Instruction_IF = 11111111111111110000111100010011, Instruction_ID = 11111111111111110000111100010011
+Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
-IFID_Inst_o = 11111111111111110000111100010011
+IFID_Inst_o = 00000000000000000000000000000000
 
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 11, Control.ALUSrc_o = 1, Control.Branch_o = 0
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
 
-IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 1, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000010010000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000010, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00111, IDEX.Rd_o = 00000
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00000
 
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11100, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000010000000000000000
+EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11111, EXMEM.ALUResult_o = 00000000000000000000000010010110, EXMEM.DATAWr_o = 00000000000000000000000001001011
 
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000010000000000000000, MEMWB.Rd_o = 11100, MEMWB.DATARd_o = 00000000000000000000000000000000
+MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000001001011, MEMWB.Rd_o = 00111, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
-PC+4 = 00000000000000000000000001001000, PC+IMM = 00000000000000000000000000111110
+PC+4 = 00000000000000000000000001001000, PC+IMM = 00000000000000000000000000000000
 
 branch_i = 0, equal_i = 0, branch_o = 0
 
@@ -765,13 +847,13 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =        256
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          5
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         44, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
 Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
@@ -779,25 +861,25 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          19, Start = 1, Stall = 1, Flush = 0
+cycle =          21, Start = 1, Stall = 3, Flush = 0
 PC =         72
-Instruction_IF = 11111111111111110000111100010011, Instruction_ID = 11111111111111110000111100010011
+Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
-IFID_Inst_o = 11111111111111110000111100010011
+IFID_Inst_o = 00000000000000000000000000000000
 
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 11, Control.ALUSrc_o = 1, Control.Branch_o = 0
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
 
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 11, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000101, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 11111111111111111111111111111111, IDEX.funct_o = 1111111000, IDEX.Rs1_o = 11110, IDEX.Rs2_o = 11111, IDEX.Rd_o = 11110
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00000
 
-EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 1, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000010010000
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
 
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 11100, MEMWB.DATARd_o = 00000000000000000000000000000000
+MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000010010110, MEMWB.Rd_o = 11111, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
-PC+4 = 00000000000000000000000001001100, PC+IMM = 00000000000000000000000001000010
+PC+4 = 00000000000000000000000001001100, PC+IMM = 00000000000000000000000000000000
 
 branch_i = 0, equal_i = 0, branch_o = 0
 
@@ -806,13 +888,13 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =      65536
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          5
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =          0
 Data Memory: 0x00 =          5
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
 Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
@@ -820,189 +902,25 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          20, Start = 1, Stall = 1, Flush = 0
+cycle =          22, Start = 1, Stall = 3, Flush = 0
 PC =         76
-Instruction_IF = 11111111111111110000111100010011, Instruction_ID = 11111111111111110000111100010011
+Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
-IFID_Inst_o = 11111111111111110000111100010011
+IFID_Inst_o = 00000000000000000000000000000000
 
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 11, Control.ALUSrc_o = 1, Control.Branch_o = 0
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
 
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 11, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000101, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 11111111111111111111111111111111, IDEX.funct_o = 1111111000, IDEX.Rs1_o = 11110, IDEX.Rs2_o = 11111, IDEX.Rd_o = 11110
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00000
 
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11110, EXMEM.ALUResult_o = 00000000000000000000000000000100, EXMEM.DATAWr_o = 00000000000000000000000000000000
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
-
-ForwardA = 10, ForwardB = 00
-
-PC+4 = 00000000000000000000000001010000, PC+IMM = 00000000000000000000000001000110
-
-branch_i = 0, equal_i = 0, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          5
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =          0
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =          21, Start = 1, Stall = 1, Flush = 0
-PC =         80
-Instruction_IF = 11111111111111110000111100010011, Instruction_ID = 11111111111111110000111100010011
-
-IFID_Inst_o = 11111111111111110000111100010011
-
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 11, Control.ALUSrc_o = 1, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 11, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000101, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 11111111111111111111111111111111, IDEX.funct_o = 1111111000, IDEX.Rs1_o = 11110, IDEX.Rs2_o = 11111, IDEX.Rd_o = 11110
-
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11110, EXMEM.ALUResult_o = 00000000000000000000000000000011, EXMEM.DATAWr_o = 00000000000000000000000000000000
-
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000100, MEMWB.Rd_o = 11110, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 10, ForwardB = 00
-
-PC+4 = 00000000000000000000000001010100, PC+IMM = 00000000000000000000000001001010
-
-branch_i = 0, equal_i = 0, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          5
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =          0
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =          22, Start = 1, Stall = 1, Flush = 0
-PC =         84
-Instruction_IF = 00000000011000110111111010110011, Instruction_ID = 11111111111111110000111100010011
-
-IFID_Inst_o = 11111111111111110000111100010011
-
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 11, Control.ALUSrc_o = 1, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 11, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000100, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 11111111111111111111111111111111, IDEX.funct_o = 1111111000, IDEX.Rs1_o = 11110, IDEX.Rs2_o = 11111, IDEX.Rd_o = 11110
-
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11110, EXMEM.ALUResult_o = 00000000000000000000000000000010, EXMEM.DATAWr_o = 00000000000000000000000000000000
-
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000011, MEMWB.Rd_o = 11110, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 10, ForwardB = 00
-
-PC+4 = 00000000000000000000000001011000, PC+IMM = 00000000000000000000000001001110
-
-branch_i = 0, equal_i = 0, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          4
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =          0
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =          23, Start = 1, Stall = 1, Flush = 0
-PC =         88
-Instruction_IF = 00000000111111110000111100010011, Instruction_ID = 00000000011000110111111010110011
-
-IFID_Inst_o = 00000000011000110111111010110011
-
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 10, Control.ALUSrc_o = 0, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 11, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000011, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 11111111111111111111111111111111, IDEX.funct_o = 1111111000, IDEX.Rs1_o = 11110, IDEX.Rs2_o = 11111, IDEX.Rd_o = 11110
-
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11110, EXMEM.ALUResult_o = 00000000000000000000000000000001, EXMEM.DATAWr_o = 00000000000000000000000000000000
-
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000010, MEMWB.Rd_o = 11110, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 10, ForwardB = 00
-
-PC+4 = 00000000000000000000000001011100, PC+IMM = 00000000000000000000000001100000
-
-branch_i = 0, equal_i = 1, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          3
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =          0
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =          24, Start = 1, Stall = 1, Flush = 0
-PC =         92
-Instruction_IF = 00000001111000000010011000100011, Instruction_ID = 00000000111111110000111100010011
-
-IFID_Inst_o = 00000000111111110000111100010011
-
-Control.RegWrite_o = 1, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 11, Control.ALUSrc_o = 1, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 10, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000010100000, IDEX.Reg2_o = 00000000000000000000000010100000, IDEX.Imm_o = 00000000000000000000000000000110, IDEX.funct_o = 0000000111, IDEX.Rs1_o = 00110, IDEX.Rs2_o = 00110, IDEX.Rd_o = 11101
-
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11110, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
-
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000001, MEMWB.Rd_o = 11110, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
-PC+4 = 00000000000000000000000001100000, PC+IMM = 00000000000000000000000001110110
+PC+4 = 00000000000000000000000001010000, PC+IMM = 00000000000000000000000000000000
 
 branch_i = 0, equal_i = 0, branch_o = 0
 
@@ -1011,13 +929,13 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          2
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
 Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
@@ -1025,25 +943,189 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          25, Start = 1, Stall = 1, Flush = 0
+cycle =          23, Start = 1, Stall = 3, Flush = 0
+PC =         80
+Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
+
+IFID_Inst_o = 00000000000000000000000000000000
+
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00000
+
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
+
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
+
+ForwardA = 00, ForwardB = 00
+
+PC+4 = 00000000000000000000000001010100, PC+IMM = 00000000000000000000000000000000
+
+branch_i = 0, equal_i = 0, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =          24, Start = 1, Stall = 3, Flush = 0
+PC =         84
+Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
+
+IFID_Inst_o = 00000000000000000000000000000000
+
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00000
+
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
+
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
+
+ForwardA = 00, ForwardB = 00
+
+PC+4 = 00000000000000000000000001011000, PC+IMM = 00000000000000000000000000000000
+
+branch_i = 0, equal_i = 0, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =          25, Start = 1, Stall = 3, Flush = 0
+PC =         88
+Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
+
+IFID_Inst_o = 00000000000000000000000000000000
+
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00000
+
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
+
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
+
+ForwardA = 00, ForwardB = 00
+
+PC+4 = 00000000000000000000000001011100, PC+IMM = 00000000000000000000000000000000
+
+branch_i = 0, equal_i = 0, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =          26, Start = 1, Stall = 3, Flush = 0
+PC =         92
+Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
+
+IFID_Inst_o = 00000000000000000000000000000000
+
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
+
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00000
+
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
+
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
+
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
+
+ForwardA = 00, ForwardB = 00
+
+PC+4 = 00000000000000000000000001100000, PC+IMM = 00000000000000000000000000000000
+
+branch_i = 0, equal_i = 0, branch_o = 0
+
+Registers
+x0 =          0, x8  =          0, x16 =          0, x24 =          0
+x1 =          0, x9  =          0, x17 =          0, x25 =          0
+x2 =          0, x10 =          0, x18 =          0, x26 =          0
+x3 =          0, x11 =          0, x19 =          0, x27 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
+Data Memory: 0x10 =          0
+Data Memory: 0x14 =          0
+Data Memory: 0x18 =          0
+Data Memory: 0x1C =          0
+
+
+cycle =          27, Start = 1, Stall = 3, Flush = 0
 PC =         96
-Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000001111000000010011000100011
+Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
-IFID_Inst_o = 00000001111000000010011000100011
+IFID_Inst_o = 00000000000000000000000000000000
 
-Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 1, Control.ALUOp_o = 00, Control.ALUSrc_o = 1, Control.Branch_o = 0
+Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
 
-IDEX.RegWrite_o = 1, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 11, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000001, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000001111, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 11110, IDEX.Rs2_o = 01111, IDEX.Rd_o = 11110
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00000
 
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11101, EXMEM.ALUResult_o = 00000000000000000000000010100000, EXMEM.DATAWr_o = 00000000000000000000000010100000
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
 
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 11110, MEMWB.DATARd_o = 00000000000000000000000000000000
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
-ForwardA = 01, ForwardB = 00
+ForwardA = 00, ForwardB = 00
 
-PC+4 = 00000000000000000000000001100100, PC+IMM = 00000000000000000000000001110100
+PC+4 = 00000000000000000000000001100100, PC+IMM = 00000000000000000000000000000000
 
 branch_i = 0, equal_i = 0, branch_o = 0
 
@@ -1052,13 +1134,13 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          1
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
 Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
@@ -1066,7 +1148,7 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          26, Start = 1, Stall = 1, Flush = 0
+cycle =          28, Start = 1, Stall = 3, Flush = 0
 PC =        100
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1074,15 +1156,15 @@ IFID_Inst_o = 00000000000000000000000000000000
 
 Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
 
-IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 1, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 1, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000001100, IDEX.funct_o = 0000000010, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 11110, IDEX.Rd_o = 01100
+IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00000
 
-EXMEM.RegWrite_o = 1, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 11110, EXMEM.ALUResult_o = 00000000000000000000000000001111, EXMEM.DATAWr_o = 00000000000000000000000000000000
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
 
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000010100000, MEMWB.Rd_o = 11101, MEMWB.DATARd_o = 00000000000000000000000000000000
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
-ForwardA = 00, ForwardB = 10
+ForwardA = 00, ForwardB = 00
 
 PC+4 = 00000000000000000000000001101000, PC+IMM = 00000000000000000000000000000000
 
@@ -1093,13 +1175,13 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =          0
-x6 =        160, x14 =          0, x22 =          0, x30 =          0
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
 Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
@@ -1107,7 +1189,7 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          27, Start = 1, Stall = 1, Flush = 0
+cycle =          29, Start = 1, Stall = 3, Flush = 0
 PC =        104
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1117,11 +1199,11 @@ Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.M
 
 IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00000
 
-EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 1, EXMEM.Rd_o = 01100, EXMEM.ALUResult_o = 00000000000000000000000000001100, EXMEM.DATAWr_o = 00000000000000000000000000001111
+EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
 
-MEMWB.RegWrite_o = 1,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000001111, MEMWB.Rd_o = 11110, MEMWB.DATARd_o = 00000000000000000000000000000000
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1134,13 +1216,13 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =          0
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
 Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
@@ -1148,7 +1230,7 @@ Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          28, Start = 1, Stall = 1, Flush = 0
+cycle =          30, Start = 1, Stall = 3, Flush = 0
 PC =        108
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1160,9 +1242,9 @@ IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 
 
 EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
 
-MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000001100, MEMWB.Rd_o = 01100, MEMWB.DATARd_o = 00000000000000000000000000000000
+MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1175,21 +1257,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          29, Start = 1, Stall = 1, Flush = 0
+cycle =          31, Start = 1, Stall = 3, Flush = 0
 PC =        112
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1203,7 +1285,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1216,21 +1298,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          30, Start = 1, Stall = 1, Flush = 0
+cycle =          32, Start = 1, Stall = 3, Flush = 0
 PC =        116
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1244,7 +1326,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1257,21 +1339,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          31, Start = 1, Stall = 1, Flush = 0
+cycle =          33, Start = 1, Stall = 3, Flush = 0
 PC =        120
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1285,7 +1367,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1298,21 +1380,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          32, Start = 1, Stall = 1, Flush = 0
+cycle =          34, Start = 1, Stall = 3, Flush = 0
 PC =        124
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1326,7 +1408,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1339,21 +1421,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          33, Start = 1, Stall = 1, Flush = 0
+cycle =          35, Start = 1, Stall = 3, Flush = 0
 PC =        128
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1367,7 +1449,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1380,21 +1462,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          34, Start = 1, Stall = 1, Flush = 0
+cycle =          36, Start = 1, Stall = 3, Flush = 0
 PC =        132
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1408,7 +1490,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1421,21 +1503,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          35, Start = 1, Stall = 1, Flush = 0
+cycle =          37, Start = 1, Stall = 3, Flush = 0
 PC =        136
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1449,7 +1531,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1462,21 +1544,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          36, Start = 1, Stall = 1, Flush = 0
+cycle =          38, Start = 1, Stall = 3, Flush = 0
 PC =        140
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1490,7 +1572,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1503,21 +1585,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          37, Start = 1, Stall = 1, Flush = 0
+cycle =          39, Start = 1, Stall = 3, Flush = 0
 PC =        144
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1531,7 +1613,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1544,21 +1626,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          38, Start = 1, Stall = 1, Flush = 0
+cycle =          40, Start = 1, Stall = 3, Flush = 0
 PC =        148
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1572,7 +1654,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1585,21 +1667,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          39, Start = 1, Stall = 1, Flush = 0
+cycle =          41, Start = 1, Stall = 3, Flush = 0
 PC =        152
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1613,7 +1695,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1626,21 +1708,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          40, Start = 1, Stall = 1, Flush = 0
+cycle =          42, Start = 1, Stall = 3, Flush = 0
 PC =        156
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1654,7 +1736,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1667,21 +1749,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          41, Start = 1, Stall = 1, Flush = 0
+cycle =          43, Start = 1, Stall = 3, Flush = 0
 PC =        160
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1695,7 +1777,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1708,21 +1790,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          42, Start = 1, Stall = 1, Flush = 0
+cycle =          44, Start = 1, Stall = 3, Flush = 0
 PC =        164
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1736,7 +1818,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1749,21 +1831,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          43, Start = 1, Stall = 1, Flush = 0
+cycle =          45, Start = 1, Stall = 3, Flush = 0
 PC =        168
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1777,7 +1859,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1790,21 +1872,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          44, Start = 1, Stall = 1, Flush = 0
+cycle =          46, Start = 1, Stall = 3, Flush = 0
 PC =        172
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1818,7 +1900,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1831,21 +1913,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          45, Start = 1, Stall = 1, Flush = 0
+cycle =          47, Start = 1, Stall = 3, Flush = 0
 PC =        176
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1859,7 +1941,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1872,21 +1954,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          46, Start = 1, Stall = 1, Flush = 0
+cycle =          48, Start = 1, Stall = 3, Flush = 0
 PC =        180
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1900,7 +1982,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1913,21 +1995,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          47, Start = 1, Stall = 1, Flush = 0
+cycle =          49, Start = 1, Stall = 3, Flush = 0
 PC =        184
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1941,7 +2023,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1954,21 +2036,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          48, Start = 1, Stall = 1, Flush = 0
+cycle =          50, Start = 1, Stall = 3, Flush = 0
 PC =        188
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -1982,7 +2064,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -1995,21 +2077,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          49, Start = 1, Stall = 1, Flush = 0
+cycle =          51, Start = 1, Stall = 3, Flush = 0
 PC =        192
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2023,7 +2105,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2036,21 +2118,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          50, Start = 1, Stall = 1, Flush = 0
+cycle =          52, Start = 1, Stall = 3, Flush = 0
 PC =        196
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2064,7 +2146,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2077,21 +2159,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          51, Start = 1, Stall = 1, Flush = 0
+cycle =          53, Start = 1, Stall = 3, Flush = 0
 PC =        200
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2105,7 +2187,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2118,21 +2200,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          52, Start = 1, Stall = 1, Flush = 0
+cycle =          54, Start = 1, Stall = 3, Flush = 0
 PC =        204
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2146,7 +2228,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2159,21 +2241,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          53, Start = 1, Stall = 1, Flush = 0
+cycle =          55, Start = 1, Stall = 3, Flush = 0
 PC =        208
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2187,7 +2269,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2200,21 +2282,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          54, Start = 1, Stall = 1, Flush = 0
+cycle =          56, Start = 1, Stall = 3, Flush = 0
 PC =        212
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2228,7 +2310,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2241,21 +2323,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          55, Start = 1, Stall = 1, Flush = 0
+cycle =          57, Start = 1, Stall = 3, Flush = 0
 PC =        216
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2269,7 +2351,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2282,21 +2364,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          56, Start = 1, Stall = 1, Flush = 0
+cycle =          58, Start = 1, Stall = 3, Flush = 0
 PC =        220
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2310,7 +2392,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2323,21 +2405,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          57, Start = 1, Stall = 1, Flush = 0
+cycle =          59, Start = 1, Stall = 3, Flush = 0
 PC =        224
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2351,7 +2433,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2364,21 +2446,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          58, Start = 1, Stall = 1, Flush = 0
+cycle =          60, Start = 1, Stall = 3, Flush = 0
 PC =        228
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2392,7 +2474,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2405,21 +2487,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          59, Start = 1, Stall = 1, Flush = 0
+cycle =          61, Start = 1, Stall = 3, Flush = 0
 PC =        232
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2433,7 +2515,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2446,21 +2528,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          60, Start = 1, Stall = 1, Flush = 0
+cycle =          62, Start = 1, Stall = 3, Flush = 0
 PC =        236
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2474,7 +2556,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2487,21 +2569,21 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0
 Data Memory: 0x1C =          0
 
 
-cycle =          61, Start = 1, Stall = 1, Flush = 0
+cycle =          63, Start = 1, Stall = 3, Flush = 0
 PC =        240
 Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
 
@@ -2515,7 +2597,7 @@ EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_
 
 MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
 
-NoOp = 0, PC_write = 1
+Rs1_i = 00000, Rs2_i = 00000, EXRd_i = 00000, ID_EXRead_i = 0, NoOp = 0, PC_write = 1, Stall = 0
 
 ForwardA = 00, ForwardB = 00
 
@@ -2528,96 +2610,14 @@ x0 =          0, x8  =          0, x16 =          0, x24 =          0
 x1 =          0, x9  =          0, x17 =          0, x25 =          0
 x2 =          0, x10 =          0, x18 =          0, x26 =          0
 x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =          62, Start = 1, Stall = 1, Flush = 0
-PC =        244
-Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
-
-IFID_Inst_o = 00000000000000000000000000000000
-
-Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00000
-
-EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
-
-MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 00, ForwardB = 00
-
-PC+4 = 00000000000000000000000011111000, PC+IMM = 00000000000000000000000000000000
-
-branch_i = 0, equal_i = 0, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
-Data Memory: 0x10 =          0
-Data Memory: 0x14 =          0
-Data Memory: 0x18 =          0
-Data Memory: 0x1C =          0
-
-
-cycle =          63, Start = 1, Stall = 1, Flush = 0
-PC =        248
-Instruction_IF = 00000000000000000000000000000000, Instruction_ID = 00000000000000000000000000000000
-
-IFID_Inst_o = 00000000000000000000000000000000
-
-Control.RegWrite_o = 0, Control.MemtoReg_o = 0, Control.MemRead_o = 0, Control.MemWrite_o = 0, Control.ALUOp_o = 00, Control.ALUSrc_o = 0, Control.Branch_o = 0
-
-IDEX.RegWrite_o = 0, IDEX.MemtoReg_o = 0, IDEX.MemRead_o = 0, IDEX.MemWrite_o = 0, IDEX.ALUOp_o = 00, IDEX.ALUSrc_o = 0, IDEX.Reg1_o = 00000000000000000000000000000000, IDEX.Reg2_o = 00000000000000000000000000000000, IDEX.Imm_o = 00000000000000000000000000000000, IDEX.funct_o = 0000000000, IDEX.Rs1_o = 00000, IDEX.Rs2_o = 00000, IDEX.Rd_o = 00000
-
-EXMEM.RegWrite_o = 0, EXMEM.MemtoReg_o = 0, EXMEM.MemRead_o = 0, EXMEM.MemWrite_o = 0, EXMEM.Rd_o = 00000, EXMEM.ALUResult_o = 00000000000000000000000000000000, EXMEM.DATAWr_o = 00000000000000000000000000000000
-
-MEMWB.RegWrite_o = 0,MEMWB.MemtoReg_o = 0, MEMWB.ALUResult_o = 00000000000000000000000000000000, MEMWB.Rd_o = 00000, MEMWB.DATARd_o = 00000000000000000000000000000000
-
-NoOp = 0, PC_write = 1
-
-ForwardA = 00, ForwardB = 00
-
-PC+4 = 00000000000000000000000011111100, PC+IMM = 00000000000000000000000000000000
-
-branch_i = 0, equal_i = 0, branch_o = 0
-
-Registers
-x0 =          0, x8  =          0, x16 =          0, x24 =          0
-x1 =          0, x9  =          0, x17 =          0, x25 =          0
-x2 =          0, x10 =          0, x18 =          0, x26 =          0
-x3 =          0, x11 =          0, x19 =          0, x27 =          0
-x4 =          0, x12 =          0, x20 =          0, x28 =          0
-x5 =          0, x13 =          0, x21 =          0, x29 =        160
-x6 =        160, x14 =          0, x22 =          0, x30 =         15
-x7 =        144, x15 =          0, x23 =          0, x31 =          0
-Data Memory: 0x00 =        144
-Data Memory: 0x04 =        160
-Data Memory: 0x08 =          0
-Data Memory: 0x0C =         15
+x4 =          0, x12 =          0, x20 =          0, x28 =          2
+x5 =         75, x13 =          0, x21 =          0, x29 =         75
+x6 =         60, x14 =          0, x22 =          0, x30 =          0
+x7 =         75, x15 =          0, x23 =          0, x31 =        150
+Data Memory: 0x00 =          5
+Data Memory: 0x04 =         15
+Data Memory: 0x08 =         75
+Data Memory: 0x0C =          0
 Data Memory: 0x10 =          0
 Data Memory: 0x14 =          0
 Data Memory: 0x18 =          0

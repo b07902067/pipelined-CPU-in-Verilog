@@ -171,7 +171,7 @@ HAZARD 	HAZRD_DETECT_UNIT
     .Rs1_i(Instruction[19:15]),
     .Rs2_i(Instruction[24:20]),
     .EXRd_i(EX_Rd),
-    .EX_MEMRead_i(MEM_MemRead),
+    .ID_EXRead_i(EX_MemRead),
     .Stall_o(isStall),
     .PCWrite_o(PCWrite),
     .NoOp_o(noOp)
