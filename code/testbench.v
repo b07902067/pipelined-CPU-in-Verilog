@@ -81,7 +81,7 @@ initial begin
 
     // Load instructions into instruction memory
     // Make sure you change back to "instruction.txt" before submission
-    $readmemb("instruction.txt", CPU.Instruction_Memory.memory);
+    $readmemb("../testdata/instruction_2.txt", CPU.Instruction_Memory.memory);
     
     // Open output file
     // Make sure you change back to "output.txt" before submission
@@ -117,7 +117,7 @@ always@(posedge Clk) begin
     $fdisplay(outfile, "EXMEM.RegWrite_o = %b, EXMEM.MemtoReg_o = %b, EXMEM.MemRead_o = %b, EXMEM.MemWrite_o = %b, EXMEM.Rd_o = %b, EXMEM.ALUResult_o = %b, EXMEM.DATAWr_o = %b\n", CPU.EXMEM.RegWrite_o, CPU.EXMEM.MemtoReg_o, CPU.EXMEM.MemRead_o, CPU.EXMEM.MemWrite_o, CPU.EXMEM.Rd_o, CPU.EXMEM.ALUResult_o, CPU.EXMEM.DATAWr_o);
     $fdisplay(outfile, "MEMWB.RegWrite_o = %b,MEMWB.MemtoReg_o = %b, MEMWB.ALUResult_o = %b, MEMWB.Rd_o = %b, MEMWB.DATARd_o = %b\n", CPU.MEMWB.RegWrite_o, CPU.MEMWB.MemtoReg_o, CPU.MEMWB.ALUResult_o, CPU.MEMWB.Rd_o, CPU.MEMWB.DATARd_o);
     $fdisplay(outfile,"NoOp = %b, PC_write = %b\n", CPU.HAZRD_DETECT_UNIT.NoOp_o, CPU.HAZRD_DETECT_UNIT.PCWrite_o);
-    //$fdisplay(outfile,"ForwardA = %b, ForwardB = %b\n", CPU.ForwardA, CPU.ForwardB);
+    $fdisplay(outfile,"ForwardA = %b, ForwardB = %b\n", CPU.ForwardA, CPU.ForwardB);
     $fdisplay(outfile,"PC+4 = %b, PC+IMM = %b\n", CPU.Add4_2PC.data_o, CPU.Add_PC_Branch.data_o);
     $fdisplay(outfile,"branch_i = %b, equal_i = %b, branch_o = %b\n", CPU.IsJunp.branch_i, CPU.IsJunp.equal_i, CPU.IsJunp.branch_o);
 

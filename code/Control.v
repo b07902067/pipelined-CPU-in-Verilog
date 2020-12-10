@@ -24,6 +24,16 @@ output reg [1:0] ALUOp_o;
 output reg ALUSrc_o;
 output reg Branch_o;
 
+initial begin
+	MemtoReg_o = 1'b0;
+	RegWrite_o = 1'b0;
+	ALUSrc_o = 1'b0;
+	ALUOp_o = 2'b00;
+	MemWrite_o = 1'b0;
+	Branch_o = 1'b0;
+	MemRead_o = 1'b0;
+end
+
 
 // assign
 
@@ -85,7 +95,15 @@ always@(op_i, NoOp_i)begin
 							Branch_o = 1'b1;
 							MemRead_o = 1'b0;
 						end
-			default	:;
+			default		:begin
+							MemtoReg_o = 1'b0;
+							RegWrite_o = 1'b0;
+							ALUSrc_o = 1'b0;
+							ALUOp_o = 2'b00;
+							MemWrite_o = 1'b0;
+							Branch_o = 1'b0;
+							MemRead_o = 1'b0;
+						end
 		endcase
 	end
 end
