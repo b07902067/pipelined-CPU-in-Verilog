@@ -86,7 +86,7 @@ always@(op_i, NoOp_i)begin
 							Branch_o = 1'b0;
 							MemRead_o = 1'b0;
 						end
-			7'b0000011	:begin			//beq
+			7'b1100011	:begin			//beq
 							MemtoReg_o = 1'b0;
 							RegWrite_o = 1'b0;
 							ALUSrc_o = 1'b1;
